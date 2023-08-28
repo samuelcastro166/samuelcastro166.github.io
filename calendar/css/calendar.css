@@ -1,0 +1,136 @@
+/*--CALENDAR--*/
+.calendar {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     height: 100%;     
+     --calendar-font-size: .8rem;
+}
+
+.calendar>.head {
+     display: flex;
+     width: 100%;
+     height: 48px;
+     justify-content: space-between;
+}
+#calendar-change-month-and-year {
+     font-size: calc(var(--calendar-font-size));
+}
+.calendar>.head>span {
+     display: flex;
+     align-items: center;
+     height: 100%;
+     width: 100%;
+     padding: 0 30px;
+}
+
+.calendar>.head :first-child {
+     padding: 5px;
+     text-shadow:
+           1px  1px 1px black,
+           1px -1px 1px black,
+          -1px  1px 1px black,
+          -1px -1px 1px black;
+}
+.calendar>.head :last-child {justify-content: right;}
+
+.calendar>.head>span>button {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     border: none;
+     background: none;
+     color: white;
+     border-radius: 1rem;
+     transition: all ease-in-out 80ms;
+}
+
+#calendar-up,
+#calendar-down {
+     margin: 0 0 0 15px;
+     padding: 7px;
+     text-shadow:
+           1px  1px 1px black,
+           1px -1px 1px black,
+          -1px  1px 1px black,
+          -1px -1px 1px black;
+}
+
+#calendar-up {
+     rotate: 90deg;
+}
+
+#calendar-down {
+     rotate: -90deg;
+}
+
+
+#calendar-weekdays {
+     display: flex;
+     width: 100%;
+     height: 50px;
+}
+#calendar-weekdays > div {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: calc(100% / 7);
+     height: 100%;
+     font-weight: 600;
+     font-size: var(--calendar-font-size);
+     margin: 0;
+}
+.decade-mode {
+     position: relative;
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     grid-template-rows: repeat(5,1fr);
+     gap: 5px;
+     height: 100%;
+     width: 100%;
+     font-size: var(--calendar-font-size);
+}
+.year-mode {
+     position: relative;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 5px;
+     height: 100%;
+     width: 100%;
+     font-size: var(--calendar-font-size);
+}
+.table {
+     position: relative;
+     display: grid;
+     grid-template-columns: repeat(7, 1fr);
+     height: 100%;
+     width: 100%;
+     font-size: var(--calendar-font-size);
+}
+
+.not-empty {
+     background-color: #fff2;
+     transition: all ease-in-out 100ms;
+     cursor: pointer;
+}
+.not-empty:hover{
+     backdrop-filter: blur(20px);
+     box-shadow: 0 0 2px 2px white;z-index: 2;scale: 1.1;
+}
+
+.cells {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin: 1px;
+     border-radius: .5rem;
+}
+
+.currDate {
+     z-index: 2;
+     border-radius: .25rem;
+     background-color: #fffa;
+     font-size: 120%;
+     color: #ff0;
+}

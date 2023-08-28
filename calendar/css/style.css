@@ -1,0 +1,45 @@
+* {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+}
+
+body {
+     width: 100%;
+     height: 100vh;
+     font-family: monospace;
+     overflow: hidden;
+     
+     background: royalblue;
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+     text-shadow:
+           1px  1px 1px black,
+           1px -1px 1px black,
+          -1px  1px 1px black,
+          -1px -1px 1px black;
+}
+
+.app {
+     position: absolute;
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     height: 100vh;
+     max-width: 400px;
+     max-height: 500px;
+     left: 50%;
+     top: 50%;
+     transform:
+          translateX(-50%) translateY(-50%);
+     color: white;
+     user-select: none;
+     backdrop-filter: blur(5px);
+     border-radius: 15px;
+     overflow: visible;
+     padding: 0 5px 5px 5px;
+}
+
+.app button:hover {box-shadow: 0 0 10px;}
+.app button:active {scale: 1.1;}
