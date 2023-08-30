@@ -4,67 +4,62 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="UI-X-Compatible" content="IE-edge">
-     <title>Digital Clock</title>
+     <title id="title">Calendário Digital</title>
      <link rel="stylesheet" href="./css/style.css">
      <link rel="stylesheet" href="./css/clock.css">
      <link rel="stylesheet" href="./css/calendar.css">
 </head>
 <body>
-<div class="app">
-     <div class="clock">
-          <div class="current-time">
-               <span id="clock-hours">--</span>
-               <span>:</span>
-               <span id="clock-minutes">--</span>
-               <span>:</span>
-               <span id="clock-seconds">--</span>
-               <span class="clock-ampm">
-                    <input type="range" min="0" max="1" id="check-ampm" title="Ativar modo 12 horas">
-                    <span id="check-animated">
-                         <div class="on" id="check-anime">
-                              <div></div>
-                         </div>
-                    </span>
-                    <span id="clock-ampm">--</span>
-               </span>
+     <div class="app">
+          <!--working...-->
+          <div class="options">
+               <button id="ampm-checkbox" title="Ativar modo 12 horas">
+                    <div id="bar" class="bar">
+                         <div class="ball"></div>
+                    </div>
+               </button>
           </div>
-          <div class="current-date">
-                              <!--FUNCTION-->
-               <div id="clock-current-date-button">
-                    <span id="clock-weekday"></span>,
-                    <span>Dia</span>
-                    <span id="clock-day"></span>
-                    <span>de</span>
-                    <span id="clock-month"></span>
-                    <span>de</span>
-                    <span id="clock-year"></span>
+          <!--...working-->
+
+          <div class="clock">
+               <div class="current-time">
+                    <span id="clock-hours">--</span>
+                    <span>:</span>
+                    <span id="clock-minutes">--</span>
+                    <span>:</span>
+                    <span id="clock-seconds">--</span>
+                    <span class="clock-ampm">
+                         <span id="clock-ampm">--</span>
+                    </span>
+               </div>
+
+               <div class="current-date">
+                    <div id="clock-current-date-button"></div>
+               </div>
+          </div>
+          <div class="calendar">
+               <div class="head">
+                    <span>
+                         <button id="calendar-change-month-and-year" name="date-changer">?</button>
+                    </span>
+                    <span>
+                         <button id="calendar-up">&#10094;</button>
+                         <button id="calendar-down">&#10094;</button>
+                    </span>
+               </div>
+               <div id="calendar-weekdays">
+                    <div>D</div>
+                    <div>S</div>
+                    <div>T</div>
+                    <div>Q</div>
+                    <div>Q</div>
+                    <div>S</div>
+                    <div>S</div>
+               </div>
+               <div class="table" id="table">
                </div>
           </div>
      </div>
-
-     <div class="calendar">
-          <div class="head">
-               <span>
-                    <button id="calendar-change-month-and-year" name="date-changer">?</button>
-               </span>
-               <span>
-                    <button id="calendar-up">&#10094;</button>
-                    <button id="calendar-down">&#10094;</button>
-               </span>
-          </div>
-          <div id="calendar-weekdays">
-               <div>D</div>
-               <div>S</div>
-               <div>T</div>
-               <div>Q</div>
-               <div>Q</div>
-               <div>S</div>
-               <div>S</div>
-          </div>
-          <div class="table" id="table">
-          </div>
-     </div>
-</div>
 <script src="./js/Calendar_Engine.js"></script>
 <script src="./js/clock.js"></script>
 <script src="./js/calendar.js"></script>

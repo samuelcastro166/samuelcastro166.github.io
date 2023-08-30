@@ -1,3 +1,45 @@
+.options {
+     display: flex;
+     align-items: center;
+     margin: 5px;
+     height: 1.5rem;
+     justify-content: right;
+
+}
+#ampm-checkbox {
+     color: #f00;
+     display: flex;
+     align-items: center;
+     width: 2rem;
+     border: 1px solid currentColor;
+     box-shadow: 0 0 5px 2px currentColor,
+          inset 0 0 5px 1px currentColor;
+     border-radius: 1rem;
+     cursor: pointer;
+     overflow: hidden;
+     transition: all ease-in-out 200ms;
+
+}
+.bar {
+     --size: 0.8rem;
+     display: flex;
+     justify-content: right;
+     align-items: center;
+     margin: 1px;
+     transition: all ease-in-out 200ms;
+     width: var(--size);
+     
+     .ball {
+          border-radius: 50%;
+          background: radial-gradient(transparent ,currentColor);
+          border: 1px solid #fffa;
+          box-shadow: 0 0 5px 2px currentColor;
+          width: var(--size);
+          height: var(--size);
+     }
+}
+
+
 .clock {
      display: flex;
      flex-direction: column;
@@ -28,22 +70,18 @@
      width: fit-content;
      font-size: 4rem;
 }
-
-.clock > .current-time> .clock-ampm {
-     align-items: end;
-     font-size: 1.4rem;
-}
-#clock-ampm {
-     transition: all ease-in-out 200ms;
-     align-self: center;
-}
-.ampm-on {
-     font-size: 1.4rem;
-}
-.ampm-off {
+.clock > .current-time> .clock-ampm {align-items: center;}
+.clock > .current-time> .clock-ampm > span {
      font-size: 0;
+     transition: all ease-in-out 200ms;
 }
-
+.clock > .current-time> .clock-ampm.on > span {
+     font-size: 1.5rem;
+}
+@media screen and (max-width: 325px) {
+     .clock>.current-time>span{font-size: 3rem;}
+     .clock > .current-time> .clock-ampm.on > span{font-size: 1rem;}
+}
 /*thecheckampm*/
 #check-ampm {
      position: absolute;
@@ -55,19 +93,6 @@
      opacity: 0;
 }
 
-/*thesliderrunnabletrack*/
-#check-ampm::-webkit-slider-runnable-track {
-     /* appearance: none; */
-     width: 100%;
-     height: 100%;
-}
-
-/*thesliderthumb*/
-#check-ampm::-webkit-slider-thumb {
-     width: 100%;
-     height: 100%;
-}
-
 .clock>.current-date>div {
      cursor: pointer;
      color: white;
@@ -75,53 +100,5 @@
      border-radius: 1rem;
      padding: 2px 5px;
 }
-
 .clock>.current-date>div:hover {box-shadow: 0 0 10px;}
 .clock>.current-date>div:active {scale: 1.1;}
-
-#weekday :first {
-     text-transform: uppercase;
-}
-
-
-/*thecheckanimated*/
-#check-animated {
-     position: absolute;
-     display: flex;
-     top: 5px;
-     right: 5px;
-     width: 2.5rem;
-     background-color:  #0004;
-     border-radius: 20px;
-     pointer-events: none;
-     z-index: 1;
-     transition: all ease-in-out 200ms;
-}
-#check-animated > div {
-     display: flex;
-     justify-content: right;
-     width: 20px;
-     height: 20px;
-     border-radius: 20px;
-     margin: 2px;
-     color: #0000;
-     transition: all ease-in-out 200ms;
-     background: #0004;
-}
-#check-animated > div > div {
-     display: flex;
-     width: 20px;
-     height: 20px;
-     border-radius: 50%;
-     border: 2px solid #fff;
-     box-shadow:
-          inset 0 0 5px currentColor,
-          0 0 3px white,
-          0 0 5px 1px currentColor ;         ;
-     transition: all ease-out 200ms;
-     background-color: currentColor;
-}
-#check-animated .on {
-     width: 100%;
-     color: #fff;
-}
