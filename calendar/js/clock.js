@@ -9,7 +9,6 @@ const clock = {
      date: document.getElementById("clock-current-date-button")
 }
 //ampm btn functions...
-{
 let ampmIsOn = false;
 let ampmIsFocus = false;
 let btn = {
@@ -125,7 +124,7 @@ function change_width(n){
           reset_all();change_transition();
      })
 change_mode();
-}
+
 //eventListeners...
 //...ampm btn functions
 
@@ -133,7 +132,7 @@ change_mode();
 //clock functions...
      function show_hour(){
           let hour = new Date().getHours();
-          if(ampm_btn.className === "on" && hour >= 12){
+          if(ampmIsOn && hour >= 12){
                hour = hour - 12;
           }
           let h = hour < 10 ? "0" + hour : hour;
