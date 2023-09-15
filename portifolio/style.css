@@ -13,19 +13,25 @@
      --font-type-2: 'Bebas Neue', sans-serif;
      --font-type-3: 'Aref Ruqaa Ink', serif;
 }
+
 body {
      z-index: 1;
      width: 100vw;
      height: 100vh;
      font-family: var(--font-type-1);
 }
+
 .app {
      z-index: 1;
      width: 100%;
      height: 100%;
      overflow: hidden;
 }
-.nav {position: relative;}
+
+.nav {
+     position: relative;
+}
+
 .nav {
      position: absolute;
      z-index: 3;
@@ -39,14 +45,16 @@ body {
      transform: translateX(-100%);
      opacity: 0;
 }
-.nav> li {
+
+.nav>li {
      display: flex;
      width: 100%;
      height: 100%;
      border: none;
      outline: none;
 }
-.nav> li> a {
+
+.nav>li>a {
      color: #fff;
      display: flex;
      width: 100%;
@@ -60,10 +68,12 @@ body {
      outline: none;
      transition: all ease-in-out 100ms;
 }
-.nav> li>a:hover {
+
+.nav>li>a:hover {
      background-color: #0005;
 }
-.nav> li>a:active {
+
+.nav>li>a:active {
      background-color: #0009;
 }
 
@@ -76,6 +86,7 @@ body {
      background-color: var(--color-1);
 
 }
+
 .header>.btn-menu {
      position: relative;
      display: flex;
@@ -92,27 +103,22 @@ body {
 }
 .header>.btn-menu>.btn-menu-bars {
      position: relative;
-}
-.header>.btn-menu>.btn-menu-bars {
-     position: absolute;
      display: flex;
      height: 3px;
      width: 45%;
      border-radius: 3px;
      background-color: currentColor;
+     margin: 3px;
 }
-.header>.btn-menu>.btn-menu .bar-1 {
-     transform: translateY(-350%);
-}
-.header>.btn-menu>.btn-menu .bar-3 {
-     transform: translateY(350%);
-}
+
 .header>.btn-menu:hover {
      background-color: #0005;
 }
+
 .header>.btn-menu:active {
      color: white;
 }
+
 .header>.title {
      display: flex;
      align-items: center;
@@ -136,10 +142,12 @@ body {
      background-color: #fff;
      overflow-y: auto;
 }
-.main>.footer{
-     background: linear-gradient(to bottom, var(--color-1),var(--color-2));
+
+.main>.footer {
+     background: linear-gradient(to bottom, var(--color-1), var(--color-2));
      color: white;
 }
+
 .main>.footer>.aviso {
      align-items: center;
      background-color: #0005;
@@ -157,35 +165,53 @@ body {
      width: 80%;
      font-weight: 900;
 }
+
 .main>.footer>.links {
      display: flex;
      justify-content: center;
 }
+
 .main>.footer>.links>.btn-icons {
-     width:  100%;
+     width: 100%;
      height: 100%;
-     max-width:  4rem;
-     max-height: 4rem; 
+     max-width: 4rem;
+     max-height: 4rem;
      border: none;
      cursor: pointer;
      background-color: #0000;
 }
+
 .main>.footer>.links>.btn-icons>.icons {
      color: #fff8;
      fill: currentColor;
      padding: 1rem;
 }
+
 .main>.footer>.links>.btn-icons>.icons:hover {
      background-color: #0005;
 }
+
 .main>.footer>.links>.btn-icons>.icons:active {
      color: #fff;
 }
-.main>.sections{
+
+.main>.sections {
      display: flex;
      flex-direction: column;
+     flex-shrink: 0;
      width: 100%;
+     height: 100vh;
 }
+.main>.sections>ul>li>a{
+     color: black;
+}
+.main>.sections>ul>li>a:hover{
+     color: var(--color-1);
+}
+.main>.sections>ul>li>a:focus{
+     color: goldenrod;
+}
+
 .main>.sections>h2 {
      display: flex;
      width: 100%;
@@ -196,6 +222,7 @@ body {
      align-items: center;
 
 }
+
 .main>.sections>h2>svg {
      fill: var(--color-1);
      width: 3rem;
@@ -205,15 +232,18 @@ body {
      padding: 4px;
      margin: 0 1rem;
 }
+
 .main>.sections>.lists {
      display: flex;
      flex-direction: column;
      padding: 2rem 3rem;
      list-style: none;
 }
-.main>.sections>.lists> li {
+
+.main>.sections>.lists>li {
      padding: 0 0 1rem 0;
 }
+
 .main>.sections>.lists>li:before {
      content: '\2756';
      display: inline-flex;
@@ -225,38 +255,46 @@ body {
      color: var(--color-1);
      font-size: 1.2rem;
 }
+
 .main>.sections>.info {
      display: flex;
      flex-direction: column;
      font-size: 0.8rem;
 }
-.main>.sections>.info>div{
+
+.main>.sections>.info>div {
      display: flex;
      flex-direction: column;
      margin-bottom: 2rem;
 }
+
 .main>.sections>.info>div>h3 {
      font-size: 1.2rem;
      margin: 2rem 0 1rem 1.5rem;
      width: fit-content;
      height: fit-content;
 }
-.main>.sections>.info>div>p{
+
+.main>.sections>.info>div>p {
      width: fit-content;
      margin: 0 3rem 1rem 3rem;
 }
+
 .main>.sections>.info>div>p>span {
      text-decoration: underline;
      cursor: pointer;
 }
-.main>.sections>.info>div>p> span:hover {
+
+.main>.sections>.info>div>p>span:hover {
      color: var(--color-1);
 }
-.main>.sections>.info>p{
+
+.main>.sections>.info>p {
      font-family: monospace;
      font-size: 90%;
      padding: 1rem;
-     >span{
+
+     >span {
           text-decoration: underline;
      }
 }
