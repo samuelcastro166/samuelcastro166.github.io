@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anamnese - Parte 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 5px 0;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="number"], input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px 0;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Anamnese - Parte 2</h1>
+
+    <form id="whatsappForm">
+      <p><strong>Avaliação de Sintomas</strong></p>
+      <ul>
+        <li>
+          <label for="depressao">Depressão:</label>
+          <input class="change-placehoder" type="number" id="depressao" name="depressao" min="0" max="10" value="" required>
+        </li>
+        <li>
+          <label for="ansiedade">Ansiedade:</label>
+          <input class="change-placehoder" type="number" id="ansiedade" name="ansiedade" min="0" max="10" value="" required>
+        </li>
+        <li>
+          <label for="medo">Medo:</label>
+          <input class="change-placehoder" type="number" id="medo" name="medo" min="0" max="10" value="" required>
+        </li>
+        <li>
+          <label for="fobia">Fobia:</label>
+          <input class="change-placehoder" type="number" id="fobia" name="fobia" min="0" max="10" value="" required>
+        </li>
+        <li>
+          <label for="insonia">Insônia:</label>
+          <input class="change-placehoder" type="number" id="insonia" name="insonia" min="0" max="10" value="" required>
+        </li>
+        <li>
+          <label for="tristeza">Tristeza:</label>
+          <input class="change-placehoder" type="number" id="tristeza" name="tristeza" min="0" max="10" value="" required>
+        </li>
+        <li>
+          <label for="magoa">Mágoa:</label>
+          <input class="change-placehoder" type="number" id="magoa" name="magoa" min="0" max="10" value="" required>
+        </li>
+        <li>
+          <label for="dor_cabeca">Dores de cabeça:</label>
+          <input class="change-placehoder" type="number" id="dor_cabeca" name="dor_cabeca" min="0" max="10" value="" required>
+        </li>
+        <li>
+          <label for="inseguranca">Insegurança:</label>
+          <input class="change-placehoder" type="number" id="inseguranca" name="inseguranca" min="0" max="10" value="" required>
+        </li>
+        <li>
+          <label for="desconfianca">Desconfiança:</label>
+          <input class="change-placehoder" type="number" id="desconfianca" name="desconfianca" min="0" max="10" value="" required>
+        </li>
+        <li>
+          <label for="nervosismo">Nervosismo:</label>
+          <input class="change-placehoder" type="number" id="nervosismo" name="nervosismo" min="0" max="10" value="" required>
+        </li>
+        <li>
+          <label for="oscilacao_humor">Oscilação de humor:</label>
+          <input class="change-placehoder" type="number" id="oscilacao_humor" name="oscilacao_humor" min="0" max="10" value="" required>
+        </li>
+      </ul>
+      <p class="section-title">Informações Pessoais</p>
+      <ul>
+        <li>
+          <label for="idade">Idade:</label>
+          <input type="number" id="idade" name="idade" min="0" required>
+        </li>
+        <li>
+          <label for="medicacao">Toma alguma medicação?</label>
+          <input type="text" id="medicacao" name="medicacao" required>
+        </li>
+      </ul>
+
+      <p class="section-title">Histórico Pessoal</p>
+      <label for="historico_pessoal">Descreva aqui eventos que marcaram sua vida inteira:</label>
+      <textarea id="historico_pessoal" name="historico_pessoal"></textarea>
+
+      <p class="section-title">Histórico Médico</p>
+      <label for="historico_medico">Quais doenças você se trata?</label>
+      <textarea id="historico_medico" name="historico_medico"></textarea>
+
+      <p>
+        <strong>
+          Prepare-se para viver o melhor tempo de sua vida. Sua cura emocional está chegando!
+        </strong>
+      </p>
+      <input type="submit" value="Enviar">
+    </form>
+    
+    <script>
+        const allNumber = document.getElementsByClassName("change-placehoder");
+        for(i = 0; i < allNumber.length; i++){
+          //allNumber.item(i).value = 0
+          allNumber.item(i).placeholder = "Insirar um número de 0 a 10"
+        }
+
+        // Get form values
+        function getNode(nodeId){
+          return document.getElementById(nodeId)
+        };
+
+        const data = {
+          depressao: getNode('depressao'),
+          ansiedade: getNode('ansiedade'),
+          medo: getNode('medo'),
+          fobia: getNode('fobia'),
+          insonia: getNode('insonia'),
+          tristeza: getNode('tristeza'),
+          magoa: getNode('magoa'),
+          dor_cabeca: getNode('dor_cabeca'),
+          inseguranca: getNode('inseguranca'),
+          desconfianca: getNode('desconfianca'),
+          nervosismo: getNode('nervosismo'),
+          oscilacao_humor: getNode('oscilacao_humor'),
+          idade: getNode('idade'),
+          medicacao: getNode('medicacao'),
+          historico_pessoal: getNode('historico_pessoal'),
+          historico_medico: getNode('historico_medico')
+        };
+
+        document.getElementById('whatsappForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Create the WhatsApp message URL 
+            const phoneNumber = '+5548999865557'; // Replace with your WhatsApp number +554888799362
+            let space = "\u0020";
+            let symbol = "\n" + space + space + "\u2B9A" + space;
+            let text = ""//"*Anamnese - Parte 2* "
+            text += "*Avaliação de Sintomas*"
+            text += symbol + "Depressão: "
+            text += data.depressao.value
+            text += symbol +  "Ansiedade: "
+            text += data.ansiedade.value
+            text += symbol + "Medo: "
+            text += data.medo.value
+            //
+            text += symbol + "Fobia: "
+            text += data.fobia.value
+            text += symbol + "Insônia: "
+            text += data.insonia.value
+            text += symbol + "Tristeza: "
+            text += data.tristeza.value
+            text += symbol + "Mágoa: "
+            text += data.magoa.value
+            text += symbol + "Dores de cabeça: "
+            text += data.dor_cabeca.value
+            text += symbol + "Insegurança: "
+            text += data.inseguranca.value
+            text += symbol + "Desconfiança: "
+            text += data.desconfianca.value
+            text += symbol + "Nervosismo: "
+            text += data.nervosismo.value
+            text += symbol + "Oscilação de humor: "
+            text += data.oscilacao_humor.value
+            text += "\n\n"
+            text += "*Informações Pessoais*"
+            text += symbol + "Idade: "
+            text += data.idade.value
+            text += symbol + "Toma alguma medicação: "
+            text += data.medicacao.value
+            text += "\n\n*Histórico Pessoal*\n"
+            text += "Descreva aqui eventos que\nmarcaram sua vida inteira:\n_"
+            text += data.historico_pessoal.value;
+            text += "_\n\n\n*Histórico Médico*\n\n"
+            text += "Quais doenças você se trata:\n_"
+            text += data.historico_medico.value + "_";
+            text = encodeURIComponent(text);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+
+            // Redirect to the WhatsApp URL
+            window.open(whatsappUrl, '_blank');
+            
+        });
+    </script>
+</body>
+</html>
